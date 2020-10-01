@@ -10,7 +10,7 @@ public class ContactApp extends ContactsDAO {
 		// TODO Auto-generated method stub
 		
 		//password, birthdate, gender
-		
+	/*	
 		ContactsDAO contactList = new ContactsDAO();
 		User user1 = new User("John","Snow",123456789,"deep@deep.com","kingslayer","01/10/1985", "male");
 		User user2 = new User("Jamie","Lannister",123456789,"adad@deep.com","badpassword","01/10/1954", "male");
@@ -21,12 +21,16 @@ public class ContactApp extends ContactsDAO {
 		contactList.addContact(user2);
 		contactList.addContact(user3);
 		contactList.addContact(user4);
+		*/
 		
-		userDecide(contactList);
+		
+		
+		//printContacts();
+		userDecide();
 	
 	}
 		
-			public static void userDecide(ContactsDAO contactList) {
+			public static void userDecide() {
 				
 				int input = 10;
 				
@@ -68,15 +72,15 @@ public class ContactApp extends ContactsDAO {
 					System.out.println("Please add gender(male, female, or other):\n");
 					String gender = readgender.nextLine();
 					
-					User useradd = new User(firstName,lastName,phoneNumber,emailAddress,password,birthdate,gender);
+					//User useradd = new User(firstName,lastName,phoneNumber,emailAddress,password,birthdate,gender);
 					
-					contactList.addContact(useradd);
+					addContact(firstName,lastName,phoneNumber,emailAddress,password,birthdate,gender);
 					
 					break;
 					
 				case 2:
 					
-					contactList.printContacts();
+				printContacts();
 					break;
 				
 				case 3:
@@ -117,9 +121,10 @@ public class ContactApp extends ContactsDAO {
 					System.out.println("Please edit gender(male, female, or other):\n");
 					gender = upgender.nextLine();
 					
-					useradd = new User(firstName,lastName,phoneNumber,emailAddress,password,birthdate,gender);
+					//useradd = new User(firstName,lastName,phoneNumber,emailAddress,password,birthdate,gender);
 					
-					contactList.updateContact(useradd,nameupdate);
+					//contactList.updateContact(useradd,nameupdate);
+					updateContact(nameupdate,firstName,lastName,phoneNumber,emailAddress,password,birthdate,gender);
 					
 					break;
 					
@@ -129,7 +134,7 @@ public class ContactApp extends ContactsDAO {
 					System.out.println("Please add first name of the person you want to delete:\n");
 					String namedelete = readNameDel.nextLine();
 					
-					contactList.removeContact(namedelete);
+				removeContact(namedelete);
 					
 					break;
 					
